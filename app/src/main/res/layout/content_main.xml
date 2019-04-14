@@ -15,7 +15,12 @@
         android:fitsSystemWindows="true"
         android:paddingRight="24dp"
         android:paddingLeft="24dp"
-        android:paddingTop="56dp">
+        android:paddingTop="24dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo_grn"/>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -26,7 +31,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:hint="Your ID"/>
+                android:hint="Your ID"
+                android:fontFamily="@font/bebas"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/white"
+                android:textColorHint="@color/white"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -38,7 +47,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:hint="Password"/>
+                android:hint="PASSWORD"
+                android:fontFamily="@font/bebas"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.v7.widget.AppCompatButton android:id="@+id/log_in"
@@ -47,16 +57,11 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
             android:padding="12dp"
-            android:text="Login"/>
+            android:text="@string/title_log_in_activity"
+            android:textColor="#fff"
+            android:background="@color/kuveytDark"
+            android:shadowColor="#000000" />
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

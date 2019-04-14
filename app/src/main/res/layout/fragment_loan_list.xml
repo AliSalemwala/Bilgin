@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+app:layout_behavior="@string/appbar_scrolling_view_behavior"
+tools:context="com.example.bilgin.com.fragments.LoanListFragment">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/kuveytGreen">
+            <TextView
+                android:textSize="20dp"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:text="Taken In:"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:textSize="20dp"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:text="Due Until: "
+                android:layout_gravity="center_vertical"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ListView
+                android:id="@+id/takenDateList"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:layout_gravity="center_vertical">
+            </ListView>
+            <ListView
+                android:id="@+id/dueDateList"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:layout_gravity="center_horizontal">
+            </ListView>
+
+
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>
+</android.support.v4.widget.NestedScrollView>

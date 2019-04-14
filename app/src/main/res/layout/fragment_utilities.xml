@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".com.fragments.UtilitiesFragment">
+
+    <GridLayout
+        android:layout_marginTop="56dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2">
+
+        <ImageButton android:id="@+id/electricity"
+            android:layout_margin="20dp"
+            android:src="@drawable/electric"/>
+
+        <ImageButton android:id="@+id/gas"
+            android:layout_margin="20dp"
+            android:src="@drawable/gas"/>
+
+        <ImageButton android:id="@+id/water"
+            android:layout_margin="20dp"
+            android:src="@drawable/water"/>
+
+        <ImageButton android:id="@+id/mobile"
+            android:layout_margin="20dp"
+            android:src="@drawable/mobile"/>
+    </GridLayout>
+
+</FrameLayout>

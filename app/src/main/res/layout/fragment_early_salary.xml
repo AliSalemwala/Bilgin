@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".com.fragments.EarlySalaryFragment"
+    android:background="@color/kuveytGreen"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/moolah"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        />
+    <EditText
+        android:id="@+id/salary_advance"
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:cursorVisible="true"
+        android:textColor="@color/white"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:hint="How much do you want?"
+        android:textColorHint="@color/white"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/get_salary_button"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/kuveytDark"
+        android:text="Get Your Salary Early!"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"/>
+
+</LinearLayout>

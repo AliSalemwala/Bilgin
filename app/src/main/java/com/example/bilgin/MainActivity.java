@@ -31,9 +31,23 @@ public class MainActivity extends AppCompatActivity {
         _loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, DisplayActivity.class);
-                startActivity(intent);
-                //TODO make the onlick
+                String email = _emailText.getText().toString();
+                String pw = _passwordText.getText().toString();
+                if (email == null || pw == null){
+                    Snackbar.make(v, "You need to enter your details first", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                } else{
+                    if ((email.toLowerCase().equals("ali") && pw.toLowerCase().equals("ali")) || (email.toLowerCase().equals("mehmet") && pw.toLowerCase().equals("meh"))){
+                        Intent intent = new Intent(MainActivity.this, DisplayActivity.class);
+                        intent.putExtra("empName", email);
+                        startActivity(intent);
+                    } else{
+                        Snackbar.make(v, "Your login details are wrong!", Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
+                    }
+                    //TODO make the onlick
+                }
+
             }
         });
         setSupportActionBar(toolbar);
@@ -42,10 +56,11 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "You need to log in first", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
+        setTitle(R.string.title_log_in_activity);
     }
 
     public void onLoginSuccess() {

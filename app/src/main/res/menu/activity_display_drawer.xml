@@ -9,34 +9,42 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="Pay with Card" />
         <item
-            android:id="@+id/take_loan"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Take Loan" />
-        <item
-            android:id="@+id/my_loans"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="My Loans" />
-        <item
             android:id="@+id/utilities"
             android:icon="@drawable/ic_menu_manage"
             android:title="Utilities" />
+
+        <item android:title="Loans"
+            android:checkable="true">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/take_loan"
+                        android:icon="@drawable/ic_menu_gallery"
+                        android:title="@string/title_take_loan_fragment" />
+                    <item
+                        android:id="@+id/my_loans"
+                        android:icon="@drawable/ic_menu_slideshow"
+                        android:title="My Loans" />
+                </group>
+            </menu>
+        </item>
+
+        <item
+            android:title=""
+            android:enabled="false"/>
+
+        <item
+            android:title=""
+            android:enabled="false"/>
+
+        <item
+            android:title=""
+            android:enabled="false"/>
+
         <item
             android:id="@+id/log_out"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Log Out" />
+            android:title="Log Out"/>
     </group>
-
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
 
 </menu>

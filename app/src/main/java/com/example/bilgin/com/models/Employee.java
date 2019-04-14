@@ -19,12 +19,16 @@ public class Employee {
     private float debt;
     private VirtualCard card;
     private boolean hasCard;
+    private float currentBalance;
+    private float nexthMonthBalance;
+    private ArrayList<Loan> loans;
 
     public Employee(String name, String id, String company, float salary) {
         this.name = name;
         this.id = id;
         this.company = company;
         this.salary = salary;
+        loans = new ArrayList<>();
 
         this.debt = 0;
         this.card = null;
@@ -36,10 +40,11 @@ public class Employee {
 
     /**
      * Check if the user is eligible for the requested amount of a loan
+     *
      * @param amountRequested
      * @return true if eligible, else false
      */
-    private boolean isEligibleForLoan(float amountRequested) {
+    public boolean isEligibleForLoan(float amountRequested) {
         boolean isEligible = false;
 
         if (salary - (debt + amountRequested) >= 0) {
@@ -51,6 +56,7 @@ public class Employee {
 
     /**
      * Calculate and return the weekly earnings
+     *
      * @return
      */
     public float calculateDaily() {
@@ -59,18 +65,20 @@ public class Employee {
         int days;
 
         if (monthNum == 2)
-            days =  29;
+            days = 29;
         else if (monthNum == 7 || monthNum % 2 == 0)
             days = 31;
         else
             days = 30;
 
 
-        return (salary - debt) / days;
+        float interest = (salary - debt) * (float) 0.0176 / days;
+        return (salary - debt) / days - interest;
     }
 
     /**
      * Checks if the user is eligible for a monthly loan
+     *
      * @param amountRequested requested amount of the loan
      * @return true if the requested loan is transferrable, false if not
      */
@@ -79,16 +87,23 @@ public class Employee {
 
         if (isEligible) {
             debt += amountRequested;
+            nexthMonthBalance -= amountRequested;
         }
-
+        loans.add(new Loan(amountRequested));
         return isEligible;
+    }
+
+    public void addDebt(float debt) {
+        this.debt += debt;
     }
 
     public boolean payUtilities(float amountToPay) {
         boolean isEligible = this.isEligibleForLoan(amountToPay);
 
-        if(isEligible)
+        if (isEligible){
             debt += amountToPay;
+            nexthMonthBalance -= amountToPay;
+        }
 
         return isEligible;
     }
@@ -101,7 +116,7 @@ public class Employee {
         return true;
     }
 
-    public boolean makePayment(float amount)  {
+    public boolean makePayment(float amount) {
         if (card == null)
             return false;
 
@@ -125,5 +140,28 @@ public class Employee {
         return name;
     }
 
-    public float getSalary() { return salary; }
+    public float getSalary() {
+        return salary;
+    }
+
+    public ArrayList<Loan> getLoans() {
+        return loans;
+    }
+
+    public float getCurrentBalance() {
+        return currentBalance;
+    }
+
+    public float getNexthMonthBalance() {
+        return nexthMonthBalance;
+    }
+
+    public void setCurrentBalance(float amount) {
+        if (isEligibleForLoan(amount))
+            currentBalance += amount;
+    }
+
+    public void setNexthMonthBalance(float amount) {
+        if (isEligibleForLoan(amount))
+            nexthMonthBalance -= amount;}
 }

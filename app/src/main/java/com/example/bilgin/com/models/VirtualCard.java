@@ -1,5 +1,7 @@
 package com.example.bilgin.com.models;
 
+import java.util.ArrayList;
+
 public class VirtualCard {
 
     // variables
@@ -7,12 +9,17 @@ public class VirtualCard {
     private float limit;
     private float available;
     private float debt;
+    public ArrayList<Float> payments;
 
     // constructor(s)
     public VirtualCard(String id, float limit) {
         this.id = id;
         this.limit = limit;
         this.available = limit;
+        payments = new ArrayList<>();
+        for (int i = 0; i < 3; i++){
+            payments.add ((float) Math.random()*50+15);
+        }
     }
 
     // methods

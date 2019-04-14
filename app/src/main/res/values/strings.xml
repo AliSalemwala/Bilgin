@@ -2,9 +2,22 @@
     <string name="app_name">Bilgin</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_display">DisplayActivity</string>
+
+    <string name="title_log_in_activity">LOGIN</string>
+    <string name="title_card_pay_fragment">PAY WITH CARD</string>
+    <string name="title_home_fragment">HOME</string>
+    <string name="title_take_loan_fragment">GET EARLY SALARY</string>
+    <string name="title_view_loans_fragment">VIEW YOUR LOANS</string>
+    <string name="title_utilities_fragment">UTILITIES</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
+    <string name="title_activity_trierr">trierr</string>
+    <string name="title_activity_trier">trier</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

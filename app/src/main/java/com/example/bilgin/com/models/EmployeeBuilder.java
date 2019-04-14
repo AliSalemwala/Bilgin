@@ -15,6 +15,7 @@ public class EmployeeBuilder {
 
     public EmployeeBuilder()
     {
+        employees = new ArrayList<Employee>();
         String[] names = {"Usama", "Ali", "Mehmet", "Ahmet", "Muhammed"};
         company = "Evil Corp";
 
@@ -24,6 +25,15 @@ public class EmployeeBuilder {
             createCard(em);
             employees.add(em);
         }
+    }
+
+    public Employee getEmployee(String empName){
+        for (Employee e: employees){
+            if (e.getName().equals(empName)){
+                return e;
+            }
+        }
+        return null;
     }
 
     private void createCard(Employee em)
